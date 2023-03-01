@@ -1,0 +1,44 @@
+{% extends 'construct/Base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="title_mainpage">
+  <h1>Responsive Image Grid</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+
+<div class="row">
+  <div class="column">
+      <div class="img_container">
+          <img src="{% static "image/fence.jpeg" %}">
+          <div class="text-block">
+            <h4>Nature</h4>
+            <p>What a beautiful sunrise</p>
+          </div>
+      </div>
+      <div class="img_container">
+          <img src="{% static "image/rancho.jpeg" %}">
+          <div class="text-block">
+            <h4>Nature</h4>
+            <p>What a beautiful sunrise</p>
+          </div>
+      </div>
+
+      <img src="{% static "image/68f64b9d.jpeg" %}">
+  </div>
+  <div class="column">
+    <img src="{% static "image/68f64b9d.jpeg" %}">
+    <img src="{% static "image/rancho.jpeg" %}">
+    <img src="{% static "image/fence.jpeg" %}">
+  </div>
+  <div class="column">
+    <img src="{% static "image/68f64b9d.jpeg" %}">
+    <img src="{% static "image/rancho.jpeg" %}">
+    <img src="{% static "image/fence.jpeg" %}">
+  </div>
+
+</div>
+
+{% endblock %}

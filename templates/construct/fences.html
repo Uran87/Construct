@@ -1,0 +1,28 @@
+{% extends 'construct/Base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="title_mainpage">
+  <h1>Заборы в {{ city }}</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="row">
+{% for fence in fences %}
+  <div class="column-fence">
+    <div class="card">
+      <img src="{{ fence.fence_picture.url }}" alt="Jane" style="width:100%">
+      <div class="container-fence">
+        <h2>{{fence.fence_name}}</h2>
+        <p class="title">{{ fence.fence_text_description}}</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}

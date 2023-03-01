@@ -1,0 +1,19 @@
+{% load static %}
+{% block modalform %}
+    <div id="id01" class="modal">
+         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+              <form class="modal-content animate" action="" method="post" id="modal-form">
+                    <div class="container">
+                         {% csrf_token %}
+                        {{ form }}
+
+                      <button type="submit" value="send">Отправить</button>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                    </div>
+              </form>
+    </div>
+{% endblock %}
