@@ -8,7 +8,7 @@ from .views import *
 urlpatterns = [
     path('fences', views.fences, name='fences'),
     path('', views.my_main_page, name='my_main_page'),
-    path('main', views.main_page, name='main_page'),
+
 
     path('<str:city>', views.my_main_page, name='my_main_page'),
     path('fences/<str:city>/', views.fences, name='fences_city'),
