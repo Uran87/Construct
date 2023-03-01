@@ -22,7 +22,7 @@ def my_main_page(request, city='Беларуси'):
 
 def fences(request, city='Беларуси'):
     contact_form = ContactForm()
-    if request.is_ajax():
+    if is_ajax(request=request):
         form = ContactForm(request.POST)
         print(request.POST)
         if form.is_valid():
@@ -33,6 +33,8 @@ def fences(request, city='Беларуси'):
     fences_set = Fence.objects.all()
     city2 = Cities.objects.all()[0]
     city = city2.city_name
+
+
     return render(request, 'construct/fences.html', {'form': contact_form,'fences': fences_set, 'city': city})
 
 #@csrf_exempt
@@ -63,10 +65,16 @@ def contact(request):
     return render(request, 'construct/fences.html', {'form': form})
 
 
+def main_page(request):
+    fence = Fence.objects.all()[1]
+    return render(request, 'construct/home.html', {'foo': fence})
+
 """def fences(request, slug):
     fence = Fence.objects.all()[1]
     slug = Cities.objects.get(url='slug')
     return render(request, 'construct/fences.html', {'foo': slug})"""
+
+
 
 
 class CitiesDetailView(DetailView):
