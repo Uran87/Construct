@@ -72,6 +72,22 @@ justify-content: center;
   font-weight: bold;
 }
 
+.modal-input{
+  font-size: 10px;
+
+}
+.modal-input:focus{
+  font-size: 10px;
+  background-color: #13b67a;
+}
+
+ .modal-input:valid{
+
+   border: 2px solid green;
+
+ }
+
+
 /* Close button on hover */
 .close:hover,
 .close:focus {

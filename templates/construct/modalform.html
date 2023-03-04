@@ -6,7 +6,10 @@
               <form class="modal-content animate" action="" method="post" id="modal-form">
                     <div class="container">
                          {% csrf_token %}
-                        {{ form }}
+                        {{ form.name_customer }}<br>
+                        {{ form.phone_number }}<br>
+                        {{ form.text_request }}
+
 
                       <button type="submit" value="send">Отправить</button>
                     </div>

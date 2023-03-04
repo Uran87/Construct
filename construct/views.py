@@ -8,6 +8,18 @@ from django.http import HttpResponse, JsonResponse
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
+
+def modal_form(request):
+    if is_ajax(request=request):
+        form = ContactForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({
+                'message': 'success'
+            })
+    return render(request, 'construct/fences.html')
+
 # Create your views here.
 def my_main_page(request, city='Беларуси'):
     if request.method == "POST":
