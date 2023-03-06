@@ -18,7 +18,7 @@ def modal_form(request):
             return JsonResponse({
                 'message': 'success'
             })
-    return render(request, 'construct/fences.html')
+    #return render(request, 'construct/modalform.html')
 
 # Create your views here.
 def my_main_page(request, city='Беларуси'):
@@ -34,14 +34,7 @@ def my_main_page(request, city='Беларуси'):
 
 def fences(request, city='Беларуси'):
     contact_form = ContactForm()
-    if is_ajax(request=request):
-        form = ContactForm(request.POST)
-        print(request.POST)
-        if form.is_valid():
-            form.save()
-            return JsonResponse({
-                'message': 'success'
-            })
+
     fences_set = Fence.objects.all()
     city2 = Cities.objects.all()[0]
     city = city2.city_name
@@ -49,13 +42,7 @@ def fences(request, city='Беларуси'):
 
     return render(request, 'construct/fences.html', {'form': contact_form,'fences': fences_set, 'city': city})
 
-#@csrf_exempt
-def modal_form(request, city='Беларуси'):
-    if request.method == "POST":
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-    return HttpResponse("gddhgf")
+
 
 
 def contact(request):

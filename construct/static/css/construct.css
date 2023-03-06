@@ -84,19 +84,19 @@ justify-content: center;
 }
 
 .modal-input{
-  font-size: 10px;
+  font-size: 15px;
 
 
 }
 
 .modal-input:focus{
-  font-size: 10px;
+  font-size: 15px;
   background-color: #13b67a;
 }
 
  .modal-input:valid{
 
-   border: 2px solid green;
+   border: 2px solid rgba(120, 222, 120, 0.84);
 
  }
 

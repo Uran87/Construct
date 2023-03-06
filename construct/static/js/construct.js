@@ -34,9 +34,12 @@ function submitHandler(e) {
         dataType    : 'json', // what type of data do we expect back from the server
         success     : successFunction
     });
+
 }
 
 function successFunction(msg) {
+
+
     if (msg.message === 'success') {
          modal.style.display = 'none';
         form.reset()

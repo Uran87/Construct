@@ -7,10 +7,11 @@ from .views import *
 
 urlpatterns = [
     path('fences', views.fences, name='fences'),
+    path('modal_form', views.modal_form, name='modal_form'),
     path('', views.my_main_page, name='my_main_page'),
     path('<str:city>', views.my_main_page, name='my_main_page'),
     path('fences/<str:city>/', views.fences, name='fences_city'),
-    path('modal_form', views.modal_form, name='modal_form'),
+
     ]
 
 if settings.DEBUG:
