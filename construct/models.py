@@ -40,3 +40,7 @@ class Cities(models.Model):
 
 
 
+class Video(models.Model):
+    video_title = models.TextField()
+    video_describe = models.TextField()
+    video_path = models.TextField()
