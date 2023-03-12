@@ -15,9 +15,6 @@ class Fence(models.Model):
         return self.fence_name
 
 
-
-
-
 class Requests(models.Model):
     name_customer = models.CharField(max_length=100, verbose_name='Имя клиента')
     text_request = models.TextField(verbose_name='Комментарий')
@@ -25,8 +22,6 @@ class Requests(models.Model):
     request_data = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.name_customer +"   "+ self.phone_number
-
-
 
 
 class Cities(models.Model):
@@ -44,3 +39,11 @@ class Video(models.Model):
     video_title = models.TextField()
     video_describe = models.TextField()
     video_path = models.TextField()
+    video_data = models.DateTimeField(auto_now=True)
+    video_slug = models.SlugField()
+    def __str__(self):
+        return self.video_title
+
+    def get_absolute_url(self):
+        return reverse("videopage", kwargs={'slug':self.video_slug})
+

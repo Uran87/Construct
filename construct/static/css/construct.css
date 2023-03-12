@@ -390,3 +390,111 @@
   background-color: #555;
 }
 
+/* Header/Blog Title */
+.blog-header {
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.blog-leftcolumn {
+  float: left;
+  width: 750px;
+  padding-right: 100px;
+
+}
+
+/* Right column */
+.blog-rightcolumn {
+  float: left;
+  width: 250px;
+
+}
+.title-video{
+    float: left;
+    width: 40%;
+    height: 60%;
+}
+
+.description-video{
+    float: end;
+    width: 100%;
+    box-sizing: border-box;
+    height: 30%;
+    display:inline-block;
+    padding-top: 5px;
+}
+/* Fake image */
+.blog-fakeimg {
+  background-color: #aa4f4f;
+  width: 60%;
+  padding: 10px;
+  float: right;
+  height: 60%;
+
+}
+
+/* Add a card effect for articles */
+.blog-card {
+   background-color: white;
+   padding: 5px;
+   margin-top: 5px;
+
+}
+
+.blog-videoframe {
+  background-color: #aa4f4f;
+  width: 60%;
+  padding: 5px;
+  float: left;
+  height: 300px;
+
+}
+
+.blog-row {
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    justify-content: center;
+    margin: auto;
+}
+
+
+
+.blog-row *{
+   box-sizing: border-box;
+   padding: 5px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .blog-leftcolumn, .blog-rightcolumn {
+    width: 100%;
+    padding: 0;
+
+  }
+  .description-video, .title-video, .blog-fakeimg{
+        float: none;
+        width: 90%;
+  }
+  .blog-card{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .blog-videoframe {
+
+  width: 90%;
+
+
+}
+}
+
+
+

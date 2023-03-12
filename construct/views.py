@@ -60,6 +60,11 @@ class CitiesDetailView(DetailView):
     template_name = "construct/fences.html"
 
 def video(request):
-    video = Video.objects.all()[0]
+    video = Video.objects.all()
 
     return render(request, 'construct/Video_blockpage.html',{"video":video})
+
+def video_detail(request, slug):
+    video = Video.objects.get(video_slug=slug)
+
+    return render(request, 'construct/Video_detail.html',{"video":video})

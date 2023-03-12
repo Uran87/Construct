@@ -13,8 +13,8 @@ urlpatterns = [
     path('fences/<str:city>/', views.fences, name='fences_city'),
 
     path('', views.my_main_page, name='my_main_page'),
-    path('video', views.video, name='videopage')
-
+    path('video', views.video, name='videopage'),
+    path('video/<str:slug>/', views.video_detail, name='videopage_detail'),
     ]
 
 if settings.DEBUG:
